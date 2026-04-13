@@ -294,7 +294,7 @@
 
         <div class="field">
           <label for="river">River Name <span class="req">*</span></label>
-          <input type="text" id="river" name="river" placeholder="e.g. River Severn" required autocomplete="off" />
+          <input type="text" id="river" name="river" placeholder="e.g. River Trent" required autocomplete="off" />
         </div>
 
         <div class="field">
@@ -307,7 +307,7 @@
           <input type="text" id="w3w" name="w3w" placeholder="e.g. ///filled.count.soap" autocomplete="off" required />
           <span class="hint">
             Find your location at <a href="https://what3words.com" target="_blank" rel="noopener">what3words.com</a>
-            — use the access point for your cleanup site.
+            . Use the access point for your cleanup site.
           </span>
         </div>
 
@@ -357,7 +357,7 @@
         <div class="field">
           <label for="details">What did you find &amp; do? <span class="req">*</span></label>
           <textarea id="details" name="details" required
-            placeholder="Describe the cleanup — what waste was collected, any notable finds, conditions, banks or tributaries covered, next steps…"></textarea>
+            placeholder="Describe the cleanup: what waste was collected, any notable finds, conditions, banks or tributaries covered, next steps…"></textarea>
         </div>
       </div>
 
@@ -374,10 +374,9 @@
   </main>
 
   <footer>
-    Built for UK river communities &nbsp;·&nbsp;
+    We can't wait for others to sort out our rivers &nbsp;·&nbsp;
     <a href="https://what3words.com" target="_blank" rel="noopener">What3Words</a>
     &nbsp;·&nbsp;
-    <a href="https://theriverstrust.org" target="_blank" rel="noopener">The Rivers Trust</a>
   </footer>
 
   <script>
@@ -457,14 +456,14 @@
           body: JSON.stringify(payload),
         });
         // With no-cors we can't read the response, so we optimistically assume success
-        setStatus('success', '✅ Thank you! Your cleanup has been logged. Every effort counts — well done!');
+        setStatus('success', 'Thank you! Your cleanup has been logged.');
         // Reset form fields (keep date)
         ['river','w3w','name','email','volunteers','waste','details'].forEach(id => {
           document.getElementById(id).value = '';
         });
         document.getElementById('date').valueAsDate = new Date();
       } catch (err) {
-        setStatus('error', '❌ Something went wrong. Please check your connection and try again.');
+        setStatus('error', 'Something went wrong. Please check your connection and try again.');
         console.error(err);
       } finally {
         btn.disabled = false;
